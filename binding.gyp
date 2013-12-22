@@ -4,6 +4,15 @@
       'target_name': 'bigint',
       'sources': [ 'bigint.cc' ],
       'conditions': [
+        ['OS=="solaris"',
+          {
+            'link_settings': {
+              'libraries': [
+                '-lgmp'
+              ]
+            }
+          }
+        ],
         ['OS=="linux"',
           {
             'link_settings': {
